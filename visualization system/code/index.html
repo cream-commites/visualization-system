@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>英雄联盟LPL比赛数据可视化 BY:Java_S</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.liMarquee.js"></script> -->
+    <!-- <script type="text/javascript" src="js/jquery.cxselect.min.js"></script> -->
+    <link rel="stylesheet" href="css/comon0.css">
+</head>
+
+<body>
+    <div style="background:#000d4a url(img/1.jpg) center top;">
+        <div class="loading">
+            <div class="loadbox"> <img src="img/1.loading.gif"> </div>
+        </div>
+        <div class="back"></div>
+        <div class="head">
+
+            <div class="weather"><span id="showTime"></span></div>
+            <a href="https://lpl.qq.com/web202301/rank.html?seasonId=212&stageIds=28,77,18" target="_blank">
+
+                <h1>英雄联盟2024全球总决赛数据可视化</h1>
+            </a>
+
+        </div>
+
+        <div class="mainbox">
+            <ul class="clearfix">
+                <li>
+                    <div class="boxall" style="height:400px;">
+                        <div class="alltitle">个人数据堆叠图</div>
+                        <div class="navboxall" id="echart5"></div>
+                    </div>
+                    <div class="boxall" style="height:260px;">
+                        <div class="alltitle">部分英雄数据</div>
+                        <div class="navboxall">
+                            <div class="wraptit">
+                                <span>英雄名</span><span>出场次数</span><span>Pick比率</span><span>胜率</span>
+                            </div>
+                            <div class="wrap">
+                                <ul>
+                                    <li>
+                                        <p><span>熔铁少女</span><span>54</span><span>51%</span><span>46%</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>武器大师</span><span>42</span><span>40%</span><span>52%</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>上古领主</span><span>39</span><span>37%</span><span>72%</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>迷失之牙</span><span>37</span><span>35%</span><span>59%</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="boxall" style="height:260px;">
+                        <div class="alltitle">2024年LPL全球总决赛</div>
+
+                        <div class="navboxall" id="echart1"></div>
+                    </div>
+                </li>
+                <li>
+
+                    <div class="boxall" style="height:230px">
+                        <div class="clearfix navboxall" style="height: 100%">
+
+                            <div class="pulll_left zhibiao">
+                                <div class="zb1"><span>T1<br>胜率最高</span>
+                                    <div id="zb1"></div>
+                                </div>
+                                <div class="zb2"><span>BLG星纪魅族<br>击杀最高</span>
+                                    <div id="zb2"></div>
+                                </div>
+                                <div class="zb3"><span>WBG<br>插眼最多</span>
+                                    <div id="zb3"></div>
+                                </div>
+                            </div>
+                            <div class="pulll_right zhibiao ">
+                                <div class="zb4"><span>BLGKnight<br>击杀最多</span>
+                                    <div id="zb4"></div>
+                                </div>
+                                <div class="zb5"><span>FLYBwipo<br>死亡最多</span>
+                                    <div id="zb5"></div>
+                                </div>
+                                <div class="zb6"><span>LNGScout<br>KDA最高</span>
+                                    <div id="zb6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="boxall" style="height:350px">
+                        <div class="alltitle">战队胜负数据</div>
+                        <div class="navboxall" id="echart4"></div>
+                    </div>
+
+                    <div class="boxall" style="height:340px">
+                        <div class="alltitle">个人击杀数据</div>
+                        <div class="navboxall" id="echart3"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="boxall" style="height:300px">
+                        <div class="alltitle">战队排行榜</div>
+                        <div class="navboxall">
+                            <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" class="toptop">排名</th>
+                                        <th scope="col">战队</th>
+                                        <th scope="col">出场次数</th>
+                                        <th scope="col">胜率</th>
+                                    </tr>
+                                    <tr>
+                                        <td><span>1</span></td>
+                                        <td>T1</td>
+                                        <td>7<br></td>
+                                        <td>86%<br></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>2</span></td>
+                                        <td>GEN</td>
+                                        <td>5</td>
+                                        <td>80%</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span>3</span></td>
+                                        <td>LNG</td>
+                                        <td>4</td>
+                                        <td>75%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>4</span></td>
+                                        <td>BLG</td>
+                                        <td>8</td>
+                                        <td>63%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>5</span></td>
+                                        <td>TES</td>
+                                        <td>5</td>
+                                        <td>60%</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="boxall" style="height: 300px">
+                        <div class="alltitle">个人排行榜</div>
+                        <div class="navboxall">
+                            <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" class="toptop">排名</th>
+                                        <th scope="col">队员</th>
+                                        <th scope="col">位置</th>
+                                        <th scope="col">总击杀</th>
+                                    </tr>
+                                    <tr>
+                                        <td><span>1</span></td>
+                                        <td>LNGScout</td>
+                                        <td>中单<br></td>
+                                        <td>34<br></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>2</span></td>
+                                        <td>GENPeyz</td>
+                                        <td>ADC</td>
+                                        <td>58</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span>3</span></td>
+                                        <td>GENChovy</td>
+                                        <td>中单</td>
+                                        <td>59</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>4</span></td>
+                                        <td>LNGGALA</td>
+                                        <td>ADC</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>5</span></td>
+                                        <td>PSGBetty</td>
+                                        <td>ADC</td>
+                                        <td>60</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="boxall" style="height:320px">
+                        <div class="alltitle">MVP种子选手</div>
+                        <div class="navboxall" id="echart2"></div>
+                    </div>
+
+                    ；
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>
